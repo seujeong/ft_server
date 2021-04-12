@@ -37,7 +37,10 @@ mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 mv phpmyadmin /var/www/html/
 rm phpMyAdmin-5.0.2-all-languages.tar.gz
 cp -rp /tmp/config.inc.php /var/www/html/phpmyadmin/
+chown -R root:root /var/www/html/phpmyadmin
+chmod 644 /var/www/html/phpmyadmin/config.inc.php
 
+# nginx 설정
 # service nginx start
 service php7.3-fpm start
 service mysql restart
